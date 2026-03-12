@@ -20,3 +20,11 @@ namespace PraktikumADO
             // Opsional: Set default text
             txtHasil.Text = "";
         }
+        // Method untuk mengatur koneksi database
+        private void Koneksi()
+        {
+            // PENTING: Sesuaikan "Data Source" dengan nama server SQL Server Anda
+            conn = new SqlConnection(
+                "Data Source=LAPTOP-4VAVDOFH\\WAWANLOMBOK;Initial Catalog=DBAkademikAD0;Integrated Security=True"
+            );
+        }
