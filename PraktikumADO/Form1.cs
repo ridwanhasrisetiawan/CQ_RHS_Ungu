@@ -83,3 +83,31 @@ namespace PraktikumADO
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query = "UPDATE Mahasiswa SET Alamat='Yogyakarta' WHERE NIM='2311010001'";
+                cmd = new SqlCommand(query, conn);
+
+                // ExecuteNonQuery untuk query yang tidak mengembalikan data (UPDATE/INSERT/DELETE)
+                int hasil = cmd.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil terupdate: " + hasil + " baris");
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        // Event handler textbox (bisa dibiarkan kosong)
+        private void txtHasil_TextChanged(object sender, EventArgs e)
+        {
+        }
+    }
+}
